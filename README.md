@@ -36,7 +36,7 @@ For Testing, rspec has been used
 
 #### Request a token
 
-Url:                127.0.0.1:3000/tokens/request_token
+URL:                127.0.0.1:3000/tokens/request_token
 
 Method:             GET
 
@@ -46,7 +46,7 @@ Optional Params:    message
 
 #### Request a list of tokens
 
-Url:                127.0.0.1:3000/tokens
+URL:                127.0.0.1:3000/tokens
 
 Method:             GET
 
@@ -54,7 +54,12 @@ Optional Params:    page, token_type
 
 #### Clear the queue
 
-Url:                127.0.0.1:3000/tokens/clear_queue
+URL:                127.0.0.1:3000/tokens/clear_queue
 
 Method:             GET
 
+## Assumptions
+
+Once token hit A999, the next token generated will be A001, A002, and so on.
+
+Once a token is cleared from the queue, we changed the served value of the token to true, by default it is false.
