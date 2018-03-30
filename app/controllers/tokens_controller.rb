@@ -42,6 +42,15 @@ class TokensController < ApplicationController
     end
   end
 
+  def request_token
+    @token = Token.new(params.permit(:token_type, :message, :client_id))
+    if @token.save
+      render json: @token, status: :ok
+    else
+      render json: {message: "Token Creation Failed"}, status: 400
+    end
+  end
+
   def clear_queue
     if Token.update_all(served: true)
       render json: {message: "Queue Successfully Cleared"}

@@ -1,5 +1,3 @@
-== README
-
 # hate2wait-Backend
 
 This is a rails backend system with two models - Item and Review. Item is any object which can be reviewed. Each item in the backend can have many reviews.
@@ -20,6 +18,10 @@ This is a rails backend system with two models - Item and Review. Item is any ob
             $ rake db:migrate
             $ rake db:seed (optional)
             $ rails server
+            
+## Running Test
+            $ rspec spec/controllers/
+            $ rspec spec/models/
 
 
 ## Documentation
@@ -30,10 +32,29 @@ For Pagination, kaminari gem is used for pagination.
 
 For Testing, rspec has been used
 
-            $ rspec spec/controllers/
-            $ rspec spec/models/
+## APIS
 
-## Assumptions
+#### Request a token
 
+Url:                127.0.0.1:3000/tokens/request_token
 
+Method:             GET
+
+Compulsory Params:  client_id, token_type
+
+Optional Params:    message
+
+#### Request a list of tokens
+
+Url:                127.0.0.1:3000/tokens
+
+Method:             GET
+
+Optional Params:    page, token_type
+
+#### Clear the queue
+
+Url:                127.0.0.1:3000/tokens/clear_queue
+
+Method:             GET
 

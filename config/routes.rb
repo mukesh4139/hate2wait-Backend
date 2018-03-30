@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :tokens, only: [:index, :new, :create, :show] do
     collection do
       get 'clear_queue'
+      get 'request_token'
     end
   end
 
