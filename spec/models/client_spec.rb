@@ -10,8 +10,13 @@
 require 'rails_helper'
 
 RSpec.describe Client, type: :model do
-  it {should respond_to :id}
-  it "has a valid factory" do
-    expect(FactoryGirl.create(:client)).to be_valid
+  before(:each) do
+    @client = Client.create!(id: "05f9ba50-716d-1f7e")
+  end
+
+  describe "creation" do
+    it "should have one item created after being created" do
+      expect(Client.count).to eq(1)
+    end
   end
 end

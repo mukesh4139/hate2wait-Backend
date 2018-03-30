@@ -75,9 +75,4 @@ RSpec.describe TokensController, type: :controller do
       expect(expected_count).to eq(0)
     end
   end
-
-  describe "Post #create" do
-
-  end
-
 end

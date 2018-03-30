@@ -23,10 +23,10 @@ class TokensController < ApplicationController
 
   def show
     @token = Token.find(params[:id])
-  end
-
-  def edit
-    @token = Token.find(params[:id])
+    respond_to do |format|
+      format.html {}
+      format.json {render json: @token}
+    end
   end
 
   def create

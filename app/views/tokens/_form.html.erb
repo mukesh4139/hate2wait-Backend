@@ -14,16 +14,18 @@
     <%= f.label :message %>
     <%= f.text_field :message %>
   </div>
+  <br>
   <div>
     <%= f.label :client_id %>
     <%= f.text_field :client_id %>
   </div>
+  <br>
   <div>
     <%= f.label :token_type %>
-    <%= f.text_field :token_type %>
+    <%= f.select :token_type, options_for_select([["Premium", "premium"], ["Standard"], ["Free", "free"]]), "data-placeholder"=> "Select Token Type" %>
   </div>
-
-    <div class="actions">
+  <br>
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
