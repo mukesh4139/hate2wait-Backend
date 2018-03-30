@@ -2,7 +2,7 @@
 #
 # Table name: clients
 #
-#  id         :string(255)
+#  id         :string(255)      not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
 #

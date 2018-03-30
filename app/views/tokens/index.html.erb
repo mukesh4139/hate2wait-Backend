@@ -1,0 +1,38 @@
+<h1>Listing tokens </h1>
+
+<h2>Total Tokens in Queue: <%=@export_tokens.count%></h2>
+
+<form action="" method="get" style="margin-bottom: 30px;">
+    Message:
+    <input class="form-control"  value="<%= params[:message] %>" name="message" type="text" placeholder="Enter Message">
+    <button type="submit">Filter</button>
+    <%= link_to 'Clear', '?' %>
+</form>
+
+<%= link_to 'New Token', new_token_path %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><b>ID</b></td>
+    <td><b>Token Type</b></td>
+    <td><b>Serial Number</b></td>
+    <td><b>Created At</b></td>
+    <td><b>Message</b></td>
+  </tr>
+    <% @tokens.each do |token| %>
+      <tr>
+        <td><%= link_to token.id, token_path(token) %></td>
+        <td><%= token.token_type %></td>
+        <td><%= token.serial_number %></td>
+        <td><%= token.created_at %></td>
+        <td><%= token.message %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

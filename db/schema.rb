@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 20180329083621) do
 
   create_table "tokens", force: true do |t|
     t.integer  "token_type"
+    t.integer  "token_index"
     t.text     "message"
     t.string   "client_id"
-    t.string   "response_token"
-    t.boolean  "served",         default: false
+    t.string   "serial_number"
+    t.boolean  "served",        default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
