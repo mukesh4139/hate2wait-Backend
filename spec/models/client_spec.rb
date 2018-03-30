@@ -10,5 +10,8 @@
 require 'rails_helper'
 
 RSpec.describe Client, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it {should respond_to :id}
+  it "has a valid factory" do
+    expect(FactoryGirl.create(:client)).to be_valid
+  end
 end
