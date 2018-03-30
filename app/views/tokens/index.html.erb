@@ -9,7 +9,10 @@
     <%= link_to 'Clear', '?' %>
 </form>
 
-<%= link_to 'New Token', new_token_path %>
+<div><%= link_to 'New Token', new_token_path %></div>
+<div><%= link_to 'Clear Queue', clear_queue_tokens_path %></div>
+<br>
+<div style="float: right"><%= paginate @tokens %></div>
 <table>
   <thead>
     <tr>
@@ -36,3 +39,6 @@
     <% end %>
   </tbody>
 </table>
+
+<br>
+<div style="float: right"><%= paginate @tokens %></div>

@@ -1,6 +1,6 @@
 # hate2wait-Backend
 
-This is a rails backend system with two models - Item and Review. Item is any object which can be reviewed. Each item in the backend can have many reviews.
+This is a rails backend system with two models - Client and Token. Each Client in the backend can request as many tokens.
 
 ## Dependencies
             * Ruby Version    : 2.1.2
@@ -9,7 +9,6 @@ This is a rails backend system with two models - Item and Review. Item is any ob
             * active_model_serializer
             * kaminari
             * rspec
-            * factory_girl_rails
 
 ## Installation
             $ git clone https://github.com/mukesh4139/hate2wait-Backend.git
@@ -42,7 +41,7 @@ Method:             GET
 
 Compulsory Params:  client_id, token_type
 
-Optional Params:    message
+Optional Params:    message 
 
 #### Request a list of tokens
 
@@ -50,7 +49,7 @@ URL:                127.0.0.1:3000/tokens
 
 Method:             GET
 
-Optional Params:    page, token_type
+Optional Params:    page, token_type, message (to filter by message)
 
 #### Clear the queue
 
