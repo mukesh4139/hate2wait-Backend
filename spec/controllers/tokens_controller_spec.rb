@@ -68,6 +68,18 @@ RSpec.describe TokensController, type: :controller do
     end
   end
 
+  describe "GET #request token" do
+    it "should return a free token when free token is requested" do
+      get :request_token, {client_id: "212ds-232-sds2", token_type: "free", message: "Provide me a free token"}
+      expect(assigns(:token).token_type).to eq("free")
+    end
+
+    it "should not create a token when token_type is not provided" do
+      get :request_token, {client_id: "212ds-232-sds2", message: "Provide me a free token"}
+      expect(assigns(:token).id).to eq(nil)
+    end
+  end
+
   describe "GET #clear_queue" do
     it "should clear the queue" do
       get :clear_queue

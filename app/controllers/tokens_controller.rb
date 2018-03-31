@@ -43,11 +43,15 @@ class TokensController < ApplicationController
   end
 
   def request_token
-    @token = Token.new(params.permit(:token_type, :message, :client_id))
-    if @token.save
-      render json: @token, status: :ok
-    else
-      render json: {message: "Token Creation Failed"}, status: 400
+    begin
+      @token = Token.new(params.permit(:token_type, :message, :client_id))
+      if @token.save
+        render json: @token, status: :ok
+      else
+        render json: {message: @token.errors}, status: 400
+      end
+    rescue StandardError => e
+      render json: {message: e.message}, status: 400
     end
   end
 

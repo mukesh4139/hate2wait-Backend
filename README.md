@@ -33,6 +33,8 @@ For Testing, rspec has been used
 
 ## APIS
 
+Adding .json to the URL will return json formatted response
+
 #### Request a token
 
 URL:                127.0.0.1:3000/tokens/request_token
